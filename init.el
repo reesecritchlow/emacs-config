@@ -1,9 +1,23 @@
 ;; Load packages
 (require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("gnu"   . "https://elpa.gnu.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
 
-(setq frame-resize-pixelwise t)
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(eval-and-compile
+  (setq use-package-always-ensure t
+        use-package-expand-minimally t))
+
+;;; GccEmacs (native-comp) stuff
+(when (and (fboundp 'native-comp-available-p) (native-comp-available-p))
+  (progn
+    (setq native-comp-async-report-warnings-errors nil)
+    (setq native-comp-deferred-compilation t)
+    (add-to-list 'native-comp-eln-load-path (expand-file-name "eln-cache/" user-emacs-directory))
+    (setq package-native-compile t)))
 
 ;; Undo the wild setting that exists
 (setq mac-option-key-is-meta t
@@ -12,7 +26,7 @@
       mac-option-modifier 'meta)
 
 ;; Font
-(set-face-attribute 'default nil :font "Jetbrains Mono" :height 140)
+
 
 ;; Use packages
 (custom-set-variables
@@ -470,3 +484,5 @@
   )
 
 (delete-selection-mode 1)
+
+(set-face-attribute 'default nil :font "Jetbrains Mono" :height 140)
