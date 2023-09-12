@@ -35,9 +35,38 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("c865644bfc16c7a43e847828139b74d1117a6077a845d16e71da38c8413a5aaa" "bf948e3f55a8cd1f420373410911d0a50be5a04a8886cabe8d8e471ad8fdba8e" "570263442ce6735821600ec74a9b032bc5512ed4539faf61168f2fdf747e0668" "636b135e4b7c86ac41375da39ade929e2bd6439de8901f53f88fde7dd5ac3561" "5b9a45080feaedc7820894ebbfe4f8251e13b66654ac4394cb416fef9fdca789" "4fda8201465755b403a33e385cf0f75eeec31ca8893199266a6aeccb4adedfa4" "251ed7ecd97af314cd77b07359a09da12dcd97be35e3ab761d4a92d8d8cf9a71" "5586a5db9dadef93b6b6e72720205a4fa92fd60e4ccfd3a5fa389782eab2371b" "545ab1a535c913c9214fe5b883046f02982c508815612234140240c129682a68" "f64189544da6f16bab285747d04a92bd57c7e7813d8c24c30f382f087d460a33" "512ce140ea9c1521ccaceaa0e73e2487e2d3826cc9d287275550b47c04072bc4" "da75eceab6bea9298e04ce5b4b07349f8c02da305734f7c0c8c6af7b5eaa9738" "680f62b751481cc5b5b44aeab824e5683cf13792c006aeba1c25ce2d89826426" "631c52620e2953e744f2b56d102eae503017047fb43d65ce028e88ef5846ea3b" "7a424478cb77a96af2c0f50cfb4e2a88647b3ccca225f8c650ed45b7f50d9525" "adaf421037f4ae6725aa9f5654a2ed49e2cd2765f71e19a7d26a454491b486eb" "56044c5a9cc45b6ec45c0eb28df100d3f0a576f18eef33ff8ff5d32bac2d9700" "00cec71d41047ebabeb310a325c365d5bc4b7fab0a681a2a108d32fb161b4006" "7ea883b13485f175d3075c72fceab701b5bf76b2076f024da50dff4107d0db25" "7e068da4ba88162324d9773ec066d93c447c76e9f4ae711ddd0c5d3863489c52" "1a1ac598737d0fcdc4dfab3af3d6f46ab2d5048b8e72bc22f50271fd6d393a00" "dc8285f7f4d86c0aebf1ea4b448842a6868553eded6f71d1de52f3dcbc960039" "8d3ef5ff6273f2a552152c7febc40eabca26bae05bd12bc85062e2dc224cde9a" "2078837f21ac3b0cc84167306fa1058e3199bbd12b6d5b56e3777a4125ff6851" "51c71bb27bdab69b505d9bf71c99864051b37ac3de531d91fdad1598ad247138" "afa47084cb0beb684281f480aa84dab7c9170b084423c7f87ba755b15f6776ef" "02f57ef0a20b7f61adce51445b68b2a7e832648ce2e7efb19d217b6454c1b644" "bbb13492a15c3258f29c21d251da1e62f1abb8bbd492386a673dcfab474186af" "eab123a5ed21463c780e17fc44f9ffc3e501655b966729a2d5a2072832abd3ac" "7fd8b914e340283c189980cd1883dbdef67080ad1a3a9cc3df864ca53bdc89cf" default))
- '(package-selected-packages
-   '(solaire-mode hide-mode-line vterm-toggle vterm autothemer rainbow-identifiers color-identifiers-mode tree-sitter-langs tree-sitter eglot rainbow-delimiters rainbow-delimeters smartparens yaml-mode dockerfile-mode lsp-pyright company exec-path-from-shell multiple-cursors js2-mode typescript-mode web-mode highlight-indent-guides treemacs-all-the-icons git-gutter-fringe git-gutter lsp-mode deadgrep magit-p4 spacemacs-theme flycheck all-the-icons doom-themes treemacs-magit treemacs-nerd-icons treemacs doom-modeline corfu marginalia vertico use-package)))
+   '("c865644bfc16c7a43e847828139b74d1117a6077a845d16e71da38c8413a5aaa"
+     "bf948e3f55a8cd1f420373410911d0a50be5a04a8886cabe8d8e471ad8fdba8e"
+     "570263442ce6735821600ec74a9b032bc5512ed4539faf61168f2fdf747e0668"
+     "636b135e4b7c86ac41375da39ade929e2bd6439de8901f53f88fde7dd5ac3561"
+     "5b9a45080feaedc7820894ebbfe4f8251e13b66654ac4394cb416fef9fdca789"
+     "4fda8201465755b403a33e385cf0f75eeec31ca8893199266a6aeccb4adedfa4"
+     "251ed7ecd97af314cd77b07359a09da12dcd97be35e3ab761d4a92d8d8cf9a71"
+     "5586a5db9dadef93b6b6e72720205a4fa92fd60e4ccfd3a5fa389782eab2371b"
+     "545ab1a535c913c9214fe5b883046f02982c508815612234140240c129682a68"
+     "f64189544da6f16bab285747d04a92bd57c7e7813d8c24c30f382f087d460a33"
+     "512ce140ea9c1521ccaceaa0e73e2487e2d3826cc9d287275550b47c04072bc4"
+     "da75eceab6bea9298e04ce5b4b07349f8c02da305734f7c0c8c6af7b5eaa9738"
+     "680f62b751481cc5b5b44aeab824e5683cf13792c006aeba1c25ce2d89826426"
+     "631c52620e2953e744f2b56d102eae503017047fb43d65ce028e88ef5846ea3b"
+     "7a424478cb77a96af2c0f50cfb4e2a88647b3ccca225f8c650ed45b7f50d9525"
+     "adaf421037f4ae6725aa9f5654a2ed49e2cd2765f71e19a7d26a454491b486eb"
+     "56044c5a9cc45b6ec45c0eb28df100d3f0a576f18eef33ff8ff5d32bac2d9700"
+     "00cec71d41047ebabeb310a325c365d5bc4b7fab0a681a2a108d32fb161b4006"
+     "7ea883b13485f175d3075c72fceab701b5bf76b2076f024da50dff4107d0db25"
+     "7e068da4ba88162324d9773ec066d93c447c76e9f4ae711ddd0c5d3863489c52"
+     "1a1ac598737d0fcdc4dfab3af3d6f46ab2d5048b8e72bc22f50271fd6d393a00"
+     "dc8285f7f4d86c0aebf1ea4b448842a6868553eded6f71d1de52f3dcbc960039"
+     "8d3ef5ff6273f2a552152c7febc40eabca26bae05bd12bc85062e2dc224cde9a"
+     "2078837f21ac3b0cc84167306fa1058e3199bbd12b6d5b56e3777a4125ff6851"
+     "51c71bb27bdab69b505d9bf71c99864051b37ac3de531d91fdad1598ad247138"
+     "afa47084cb0beb684281f480aa84dab7c9170b084423c7f87ba755b15f6776ef"
+     "02f57ef0a20b7f61adce51445b68b2a7e832648ce2e7efb19d217b6454c1b644"
+     "bbb13492a15c3258f29c21d251da1e62f1abb8bbd492386a673dcfab474186af"
+     "eab123a5ed21463c780e17fc44f9ffc3e501655b966729a2d5a2072832abd3ac"
+     "7fd8b914e340283c189980cd1883dbdef67080ad1a3a9cc3df864ca53bdc89cf"
+     default))
+ '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -186,15 +215,15 @@
 (use-package treemacs
   :ensure t
   :config
-  (set-face-attribute 'treemacs-root-face nil :font "Helvetica Neue" :height 145)
-  (set-face-attribute 'treemacs-directory-face nil :font "Helvetica Neue" :height 145)
-  (set-face-attribute 'treemacs-file-face nil :font "Helvetica Neue" :height 145)
+  ;; (set-face-attribute 'treemacs-root-face nil :font "Helvetica Neue" :height 145)
+  ;; (set-face-attribute 'treemacs-directory-face nil :font "Helvetica Neue" :height 145)
+  ;; (set-face-attribute 'treemacs-file-face nil :font "Helvetica Neue" :height 145)
   (treemacs-follow-mode -1)
   :custom
   (doom-themes-treemacs-config)
   (treemacs-width 35)
   (treemacs-width-is-initially-locked t)
-  (treemacs-file-face 'Helvetica)
+  ;; (treemacs-file-face 'Helvetica)
   :bind
   ("<f9>"   . treemacs)
   ("C-<f9>" . my/treemacs-find-file)
@@ -414,8 +443,8 @@
 ;; (add-hook 'text-mode-hook 'set-bigger-spacing)
 ;; (add-hook 'prog-mode-hook 'set-bigger-spacing)
 
-(use-package company-mode
-  :commands company-mode)
+;; (use-package company-mode
+;;   :commands company-mode)
 
 (use-package dockerfile-mode
   :ensure t)
@@ -458,31 +487,33 @@
 (push "/Users/reesecritchlow/.emacs.d/themes" custom-theme-load-path)
 (push "/Users/reesecritchlow/.emacs.d/themes" load-path)
 
-(use-package vterm
-  :ensure t
-  :config
-  (use-package hide-mode-line
-    :ensure t)
-  (use-package vterm-toggle
-    :ensure t
-    :config
-    (add-hook 'vterm-mode-hook #'hide-mode-line-mode)
-    (global-set-key (kbd "C-#") 'vterm-toggle)
-    (global-set-key (kbd "C-$") 'vterm-toggle-cd)
-    (setq vterm-toggle-fullscreen-p nil)
-    (add-to-list 'display-buffer-alist
-		 '((lambda (buffer-or-name _)
-                     (let ((buffer (get-buffer buffer-or-name)))
-                       (with-current-buffer buffer
-			 (or (equal major-mode 'vterm-mode)
-                             (string-prefix-p vterm-buffer-name (buffer-name buffer))))))
-		   (display-buffer-reuse-window display-buffer-in-side-window)
-		   (side . bottom)
-		   ;;(dedicated . t) ;dedicated is supported in emacs27
-		   (reusable-frames . visible)
-		   (window-height . 0.25))))
-  )
+(set-face-attribute 'default nil :font "Jetbrains Mono")
+
+;; (use-package vterm
+;;   :ensure t
+;;   :config
+;;   (use-package hide-mode-line
+;;     :ensure t)
+;;   (use-package vterm-toggle
+;;     :ensure t
+;;     :config
+;;     (add-hook 'vterm-mode-hook #'hide-mode-line-mode)
+;;     (global-set-key (kbd "C-#") 'vterm-toggle)
+;;     (global-set-key (kbd "C-$") 'vterm-toggle-cd)
+;;     (setq vterm-toggle-fullscreen-p nil)
+;;     (add-to-list 'display-buffer-alist
+;; 		 '((lambda (buffer-or-name _)
+;;                      (let ((buffer (get-buffer buffer-or-name)))
+;;                        (with-current-buffer buffer
+;; 			 (or (equal major-mode 'vterm-mode)
+;;                              (string-prefix-p vterm-buffer-name (buffer-name buffer))))))
+;; 		   (display-buffer-reuse-window display-buffer-in-side-window)
+;; 		   (side . bottom)
+;; 		   ;;(dedicated . t) ;dedicated is supported in emacs27
+;; 		   (reusable-frames . visible)
+;; 		   (window-height . 0.25))))
+;;   )
 
 (delete-selection-mode 1)
 
-(set-face-attribute 'default nil :font "Jetbrains Mono" :height 140)
+
