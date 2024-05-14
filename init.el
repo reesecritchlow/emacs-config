@@ -27,8 +27,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(deadgrep doom-modeline doom-themes magit markdown-mode use-package
-	      vertico)))
+   '(company deadgrep doom-modeline doom-themes lsp-mode lsp-pyright
+	     lsp-ui magit markdown-mode rainbow-delimiters smartparens
+	     smartparens-mode tree-sitter vertico)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -39,6 +40,7 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+(setq column-number-mode t)
 
 (set-face-attribute 'default nil :font "Jetbrains Mono" :height 125)
 
@@ -80,3 +82,47 @@
 
 (use-package markdown-mode
   :ensure t)
+
+(use-package tree-sitter
+  :ensure t)
+
+(use-package lsp-mode
+  :init
+  ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
+  (setq lsp-keymap-prefix "C-c l")
+  ;; :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
+  ;;        ;; if you want which-key integration
+  ;;        (lsp-mode . lsp-enable-which-key-integration))
+  :commands lsp)
+
+;; optionally
+(use-package lsp-ui :commands lsp-ui-mode)
+
+(use-package lsp-pyright
+  :ensure t
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp))))  ; or lsp-deferred
+
+(use-package eglot
+  :ensure t)
+
+(use-package company
+  :ensure t)
+
+(use-package rainbow-delimiters
+  :ensure t
+  :config (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
+
+(use-package smartparens
+  :ensure t
+  :config (add-hook 'prog-mode-hook #'smartparens-mode))
+
+(defun wsl-copy (start end)
+  (interactive "r")
+  (shell-command-on-region start end "clip.exe")
+  (deactivate-mark))
+
+(global-set-key
+ (kbd "C-c M-w")
+ 'wsl-copy)
