@@ -254,23 +254,46 @@
 (require 'livedown)
 
 (defun latexmk-init ()
-  "Open a new vterm buffer, change the buffer name to '*latex-compile-BUFFERNAME*',
-change to the current buffer's directory, and run 'latexmk -pdf -pvc FILENAME'."
+  "Open a vterm buffer for latexmk, a PDF preview, and split windows as follows:
+- The left side (50% width) contains the LaTeX source on top and a vterm at the bottom.
+- The right side (50% width) contains the PDF preview with auto-revert-mode enabled."
   (interactive)
-  ;; Get the directory of the current buffer and the file name
-  (let* ((default-directory (file-name-directory (buffer-file-name)))
+  ;; Get LaTeX file details
+  (let* ((file-dir (file-name-directory (buffer-file-name)))
          (file-name (file-name-nondirectory (buffer-file-name)))
-         (buffer-name (file-name-base (buffer-file-name))))
-    ;; Open a new vterm buffer
+         (buffer-name (file-name-base (buffer-file-name)))
+         (pdf-file (concat file-dir buffer-name ".pdf")))
+
+    ;; First, split the window into left and right (50% width each)
+    (split-window-right)
+    (other-window 1)  ;; Move to the right window
+
+    ;; Open the PDF on the right
+    (let ((default-directory file-dir))
+      (find-file pdf-file)
+      (auto-revert-mode 1))  ;; Enable auto-revert-mode for live PDF updates
+
+    ;; Move back to the left window
+    (other-window 1)
+
+    ;; Now split the left window into top (LaTeX) and bottom (vterm)
+    (split-window-below)
+    (other-window 1)  ;; Move to the bottom window
+
+    ;; Open vterm at the bottom
     (vterm)
-    ;; Rename the vterm buffer to *latex-compile-BUFFERNAME*
     (rename-buffer (concat "*latexmk-" buffer-name "*"))
-    ;; Send the 'cd' command to change to the directory of the current buffer
-    (vterm-send-string (concat "cd " default-directory))
+
+    ;; Change directory inside vterm
+    (vterm-send-string (concat "cd " file-dir))
     (vterm-send-return)
-    ;; Send the 'latexmk -pdf -pvc FILENAME' command
+
+    ;; Run latexmk
     (vterm-send-string (concat "latexmk -pdf -pvc -lualatex --shell-escape " file-name))
-    (vterm-send-return)))
+    (vterm-send-return)
+
+    ;; Move back to the LaTeX source buffer (top left)
+    (other-window 1)))
 
 (add-to-list 'auto-mode-alist '("\\.jl\\'" . julia-mode))
 (setq major-mode-remap-alist '((julia-ts-mode . julia-mode)))
